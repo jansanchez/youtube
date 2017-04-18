@@ -4,7 +4,7 @@ MAINTAINER Jan Sanchez <joejansanchez@gmail.com>
 # Udpating and Installing dependencies
 RUN apt-get update && apt-get install -y \
     ffmpeg \
-    python3
+    python3  \
     && rm -rf /var/lib/apt/lists/*
 
 # Install youtube-dl
