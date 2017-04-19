@@ -11,4 +11,12 @@ RUN apt-get update && apt-get install -y \
 RUN curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 RUN chmod a+rx /usr/local/bin/youtube-dl
 
-# version: 0.9.1
+RUN mkdir /downloads \
+ && chmod a+rw /downloads
+
+WORKDIR /downloads
+
+VOLUME ["/downloads"]
+
+ENTRYPOINT ["youtube-dl"]
+CMD ["--help"]
